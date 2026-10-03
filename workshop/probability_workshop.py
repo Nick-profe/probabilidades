@@ -255,39 +255,49 @@ print(
 
 # 1. ¿Por qué purchased puede considerarse
 #    una variable aleatoria Bernoulli?
-# Respuesta:
+# Respuesta: Porque solo puede tomar dos valores: 1 si el cliente compra y 0 si no compra.
+# Su parámetro p representa la probabilidad de compra.
 
 
 # 2. ¿Qué representa P(compra) dentro del problema?
-# Respuesta:
+# Respuesta: Es la proporción de clientes que compraron en la campaña. En estos datos es 0.575,
+# es decir, el 57.5 % de los clientes.
 
 
 # 3. ¿Por qué las probabilidades de la PMF
 #    deben sumar 1?
-# Respuesta:
+# Respuesta: Porque la PMF incluye todos los valores posibles de la variable, que son eventos
+# mutuamente excluyentes y exhaustivos. Por tanto, sus probabilidades cubren el 100 % de los casos.
 
 
 # 4. ¿Qué representa E[X] cuando X es
 #    la variable purchased?
-# Respuesta:
+# Respuesta: Es el promedio esperado del indicador de compra. Como purchased vale 1 al comprar
+# y 0 al no comprar, E[X] equivale a la probabilidad de compra: 0.575.
 
 
 # 5. ¿Qué representa la varianza de X?
-# Respuesta:
+# Respuesta: Mide cuánto varía purchased respecto a su media, es decir, cuánta incertidumbre hay
+# entre compra y no compra. En estos datos, Var(X) = 0.244375.
 
 
 # 6. ¿Por qué la probabilidad observada en una
 #    muestra puede ser diferente de la probabilidad
 #    observada en toda la población?
-# Respuesta:
+# Respuesta: Porque una muestra contiene solo parte de los clientes y su composición depende
+# del azar. Esta variabilidad de muestreo suele ser mayor cuando la muestra es pequeña.
 
 
 # 7. ¿Cuál es la diferencia entre
 #    P(compra) y P(compra | email)?
-# Respuesta:
+# Respuesta: P(compra) considera a todos los clientes y vale 0.575. P(compra | email) considera
+# solo a quienes recibieron email y vale 0.65 en estos datos.
 
 
 # 8. ¿Cómo se relaciona P(Y = 1 | X)
 #    con un problema de clasificación
 #    en Machine Learning?
-# Respuesta:
+# Respuesta: Es la probabilidad estimada de que la clase sea positiva (Y = 1), dadas las
+# características X del cliente. Un clasificador puede usarla para asignar una clase, por ejemplo,
+# prediciendo compra cuando la probabilidad supera un umbral. Aquí X representa características,
+# no la variable purchased usada como X en las secciones anteriores.
