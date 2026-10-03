@@ -282,7 +282,10 @@ print(
 
 # 4. ¿Qué representa E[X] cuando X es
 #    la variable purchased?
-# Respuesta:
+# Respuesta: E[X] = 0.575, que coincide con P(compra). En una variable
+# Bernoulli el valor esperado es igual al parámetro p, porque
+# E[X] = 0*(1-p) + 1*p = p. No es un promedio de montos, sino la
+# probabilidad de compra expresada como esperanza.
 
 
 # 5. ¿Qué representa la varianza de X?
