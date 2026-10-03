@@ -298,7 +298,11 @@ print(
 # 6. ¿Por qué la probabilidad observada en una
 #    muestra puede ser diferente de la probabilidad
 #    observada en toda la población?
-# Respuesta:
+# Respuesta: Por variabilidad muestral. La muestra de 10 observaciones
+# dio 0.4 frente al 0.575 de la población: al tomar pocos elementos, el
+# azar de cuáles fueron seleccionados influye mucho en la proporción
+# resultante. A medida que crece el tamaño de la muestra, esa proporción
+# tiende a acercarse a la de la población.
 
 
 # 7. ¿Cuál es la diferencia entre
