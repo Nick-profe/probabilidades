@@ -26,6 +26,7 @@ order_value = data[:, 3]
 print("Número de clientes:", len(customer_id))
 
 
+
 # 2. VARIABLE ALEATORIA
 # ------------------------------------------------------------
 
