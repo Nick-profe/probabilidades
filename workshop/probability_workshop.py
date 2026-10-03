@@ -259,7 +259,10 @@ print(
 
 # 1. ¿Por qué purchased puede considerarse
 #    una variable aleatoria Bernoulli?
-# Respuesta:
+# Respuesta: Porque solo toma dos valores posibles, 0 (no compró) y
+# 1 (compró), y cada cliente constituye un ensayo independiente con una
+# misma probabilidad p de éxito. Esa es exactamente la definición de una
+# variable Bernoulli.
 
 
 # 2. ¿Qué representa P(compra) dentro del problema?
