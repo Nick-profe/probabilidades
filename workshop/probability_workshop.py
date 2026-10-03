@@ -317,4 +317,8 @@ print(
 # 8. ¿Cómo se relaciona P(Y = 1 | X)
 #    con un problema de clasificación
 #    en Machine Learning?
-# Respuesta:
+# Respuesta: Es justamente lo que estima un clasificador binario: la
+# probabilidad de pertenecer a la clase positiva dadas las
+# características del cliente. El cálculo de P(compra | email) del punto 9
+# es una versión manual de esa idea, con una sola variable; un modelo
+# generaliza el mismo razonamiento a muchas variables simultáneas.
