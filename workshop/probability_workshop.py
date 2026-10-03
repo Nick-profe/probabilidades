@@ -274,7 +274,10 @@ print(
 
 # 3. ¿Por qué las probabilidades de la PMF
 #    deben sumar 1?
-# Respuesta:
+# Respuesta: Porque los valores de la PMF cubren todos los resultados
+# posibles de la variable y son mutuamente excluyentes. Al agotar el
+# espacio muestral completo, la suma de sus probabilidades es
+# necesariamente 1.
 
 
 # 4. ¿Qué representa E[X] cuando X es
