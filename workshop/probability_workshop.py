@@ -3,10 +3,10 @@ import numpy as np
 # TALLER DE PROBABILIDAD APLICADA A MACHINE LEARNING
 # ============================================================
 
-# Nombre:
-# Apellido 1:
-# Apellido 2:
-# Rama:
+# Nombre: Juan Esteban
+# Apellido 1: Estacio
+# Apellido 2: Alomia
+# Rama: estacio_alomia
 
 
 # 1. CARGA DE DATOS
@@ -51,22 +51,14 @@ def empirical_probability(event):
     Calcula la proporción de observaciones
     para las cuales un evento es verdadero.
     """
-
-    # TODO: completar
-    return None
+    return np.mean(event)
 
 
-# TODO:
 # calcular P(compra)
+p_purchase = empirical_probability(X == 1)
 
-p_purchase = None
-
-
-# TODO:
 # calcular P(no compra)
-
-p_no_purchase = None
-
+p_no_purchase = empirical_probability(X == 0)
 
 print(
     "P(compra):",
@@ -89,21 +81,17 @@ def empirical_pmf(values):
     Calcula los valores posibles de una variable
     discreta y sus probabilidades empíricas.
     """
+    unique_values, counts = np.unique(
+        values,
+        return_counts=True
+    )
 
-    # TODO: completar
-
-    unique_values = None
-    probabilities = None
+    probabilities = counts / len(values)
 
     return unique_values, probabilities
 
 
-pmf_values = None
-pmf_probabilities = None
-
-
-# TODO:
-# utilizar empirical_pmf(X)
+pmf_values, pmf_probabilities = empirical_pmf(X)
 
 
 print(
@@ -123,7 +111,7 @@ print(
 # La suma de todas las probabilidades
 # de una PMF debe ser igual a 1.
 
-pmf_sum = None
+pmf_sum = np.sum(pmf_probabilities)
 
 print(
     "Suma de probabilidades:",
@@ -141,13 +129,15 @@ def expected_value(
     """
     Calcula E[X].
     """
+    return np.sum(
+        values * probabilities
+    )
 
-    # TODO: completar
-    return None
 
-
-expected_purchase = None
-
+expected_purchase = expected_value(
+    pmf_values,
+    pmf_probabilities
+)
 
 print(
     "Valor esperado de X:",
@@ -165,14 +155,20 @@ def variance(
     """
     Calcula Var(X).
     """
+    mean = expected_value(
+        values,
+        probabilities
+    )
 
-    # TODO: completar
+    return np.sum(
+        probabilities * (values - mean) ** 2
+    )
 
-    return None
 
-
-purchase_variance = None
-
+purchase_variance = variance(
+    pmf_values,
+    pmf_probabilities
+)
 
 print(
     "Varianza de X:",
@@ -187,20 +183,23 @@ print(
 np.random.seed(42)
 
 
-# TODO:
 # seleccionar una muestra aleatoria
 # de 10 observaciones de X
 # sin reemplazo.
 
-sample = None
+sample = np.random.choice(
+    X,
+    size=10,
+    replace=False
+)
 
 
-# TODO:
 # calcular la probabilidad de compra
 # dentro de la muestra.
 
-sample_probability = None
-
+sample_probability = empirical_probability(
+    sample == 1
+)
 
 print(
     "Probabilidad de compra en la población:",
@@ -223,9 +222,9 @@ def conditional_probability(
     """
     Calcula P(evento | condición).
     """
-
-    # TODO: completar
-    return None
+    return np.mean(
+        event[condition]
+    )
 
 
 # channel == 0 representa email
@@ -235,16 +234,20 @@ email_condition = channel == 0
 social_condition = channel == 1
 
 
-# TODO:
 # calcular P(compra | email)
 
-p_purchase_email = None
+p_purchase_email = conditional_probability(
+    purchased == 1,
+    email_condition
+)
 
 
-# TODO:
 # calcular P(compra | social)
 
-p_purchase_social = None
+p_purchase_social = conditional_probability(
+    purchased == 1,
+    social_condition
+)
 
 
 print(
@@ -278,39 +281,69 @@ print(
 
 # 1. ¿Por qué purchased puede considerarse
 #    una variable aleatoria Bernoulli?
+#
 # Respuesta:
+# Porque purchased solo puede tomar dos valores:
+# 0 si el cliente no compró y 1 si el cliente compró.
 
 
 # 2. ¿Qué representa P(compra) dentro del problema?
+#
 # Respuesta:
+# Representa la proporción de clientes del conjunto de datos
+# que realizaron una compra.
 
 
 # 3. ¿Por qué las probabilidades de la PMF
 #    deben sumar 1?
+#
 # Respuesta:
+# Porque la PMF contiene las probabilidades de todos los valores
+# posibles de la variable aleatoria, y uno de esos valores debe
+# ocurrir.
 
 
 # 4. ¿Qué representa E[X] cuando X es
 #    la variable purchased?
+#
 # Respuesta:
+# Representa el promedio esperado de la variable purchased,
+# es decir, la probabilidad de compra cuando X toma los valores
+# 0 y 1.
 
 
 # 5. ¿Qué representa la varianza de X?
+#
 # Respuesta:
+# Representa qué tanto se dispersan los valores de X alrededor
+# de su valor esperado.
 
 
 # 6. ¿Por qué la probabilidad observada en una
 #    muestra puede ser diferente de la probabilidad
 #    observada en toda la población?
+#
 # Respuesta:
+# Porque una muestra contiene solo una parte de las observaciones
+# de la población y sus resultados pueden variar debido al muestreo.
 
 
 # 7. ¿Cuál es la diferencia entre
 #    P(compra) y P(compra | email)?
+#
 # Respuesta:
+# P(compra) representa la probabilidad de compra considerando
+# toda la población, mientras que P(compra | email) representa
+# la probabilidad de compra únicamente entre los clientes
+# contactados por email.
 
 
 # 8. ¿Cómo se relaciona P(Y = 1 | X)
 #    con un problema de clasificación
 #    en Machine Learning?
+#
 # Respuesta:
+# Representa la probabilidad de que la variable objetivo Y tome
+# el valor 1 dadas las características X del cliente. En una
+# clasificación binaria puede utilizarse para estimar la probabilidad
+# de pertenecer a la clase positiva.
