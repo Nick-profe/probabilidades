@@ -266,7 +266,10 @@ print(
 
 
 # 2. ¿Qué representa P(compra) dentro del problema?
-# Respuesta:
+# Respuesta: Es la proporción de clientes que efectivamente compraron,
+# 0.575. Corresponde a la estimación empírica del parámetro p de la
+# distribución Bernoulli: la probabilidad de que un cliente cualquiera de
+# la campaña realice una compra.
 
 
 # 3. ¿Por qué las probabilidades de la PMF
