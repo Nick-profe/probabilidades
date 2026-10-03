@@ -98,8 +98,8 @@ def empirical_pmf(values):
     return unique_values, probabilities
 
 
-pmf_values = empirical_pmf(X)
-pmf_probabilities = empirical_pmf(X)
+pmf_values = empirical_pmf(X)[0]
+pmf_probabilities = empirical_pmf(X)[1]
 
 
 # TODO:
