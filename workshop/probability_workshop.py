@@ -98,7 +98,8 @@ def empirical_pmf(values):
     return unique_values, probabilities
 
 
-pmf_values = np.sum(pmf_probabilities, axis=0)
+pmf_values = empirical_pmf(X)
+pmf_probabilities = empirical_pmf(X)
 
 
 # TODO:
@@ -122,7 +123,7 @@ print(
 # La suma de todas las probabilidades
 # de una PMF debe ser igual a 1.
 
-pmf_sum = None
+pmf_sum = np.sum(pmf_probabilities)
 
 print(
     "Suma de probabilidades:",
@@ -142,10 +143,10 @@ def expected_value(
     """
 
     # TODO: completar
-    return None
+    return np.sum(values * probabilities)
 
 
-expected_purchase = None
+expected_purchase = expected_value(pmf_values, pmf_probabilities)
 
 
 print(
