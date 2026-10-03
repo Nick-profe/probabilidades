@@ -307,7 +307,11 @@ print(
 
 # 7. ¿Cuál es la diferencia entre
 #    P(compra) y P(compra | email)?
-# Respuesta:
+# Respuesta: P(compra) = 0.575 es la probabilidad marginal, calculada
+# sobre todos los clientes. P(compra | email) = 0.65 es condicional:
+# restringe el cálculo únicamente a los contactados por email. Como los
+# valores difieren, conocer el canal cambia la probabilidad, lo que indica
+# que compra y canal no son independientes.
 
 
 # 8. ¿Cómo se relaciona P(Y = 1 | X)
