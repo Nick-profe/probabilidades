@@ -289,7 +289,10 @@ print(
 
 
 # 5. ¿Qué representa la varianza de X?
-# Respuesta:
+# Respuesta: Var(X) = 0.244375, y mide la dispersión de los resultados
+# alrededor de la media. Verifica la fórmula teórica p(1-p). Es máxima
+# cuando p se acerca a 0.5, es decir cuando hay mayor incertidumbre sobre
+# el resultado, y tiende a 0 cuando p se acerca a 0 o a 1.
 
 
 # 6. ¿Por qué la probabilidad observada en una
