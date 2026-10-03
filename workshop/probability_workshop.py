@@ -280,39 +280,34 @@ print(
 
 # 1. ¿Por qué purchased puede considerarse
 #    una variable aleatoria Bernoulli?
-# Respuesta:
+# Respuesta: Porque solo puede tomar dos valores, 0 o 1, representando no compra y compra respectivamente.
 
 
 # 2. ¿Qué representa P(compra) dentro del problema?
-# Respuesta:
-
+# Respuesta: La probabilidad de que un cliente realice una compra.
 
 # 3. ¿Por qué las probabilidades de la PMF
 #    deben sumar 1?
-# Respuesta:
-
+# Respuesta: Porque representan todas las posibles outcomes de la variable aleatoria, y la suma de las probabilidades de todos los eventos posibles debe ser 1.
 
 # 4. ¿Qué representa E[X] cuando X es
 #    la variable purchased?
-# Respuesta:
-
+# Respuesta: La esperanza de X representa la probabilidad de que un cliente realice una compra.
 
 # 5. ¿Qué representa la varianza de X?
-# Respuesta:
-
+# Respuesta: La varianza de X representa la dispersión de las probabilidades alrededor de la esperanza.
 
 # 6. ¿Por qué la probabilidad observada en una
 #    muestra puede ser diferente de la probabilidad
 #    observada en toda la población?
-# Respuesta:
-
+# Respuesta: Porque la muestra es solo un subconjunto de la población, y por lo tanto puede no ser representativa de la población completa.
 
 # 7. ¿Cuál es la diferencia entre
 #    P(compra) y P(compra | email)?
-# Respuesta:
+# Respuesta: P(compra) es la probabilidad general de que un cliente realice una compra, mientras que P(compra | email) es la probabilidad de que un cliente realice una compra porque ha recibido un email.
 
 
 # 8. ¿Cómo se relaciona P(Y = 1 | X)
 #    con un problema de clasificación
 #    en Machine Learning?
-# Respuesta:
+# Respuesta: P(Y = 1 | X) representa la probabilidad de que un cliente realice una compra dado un conjunto de características del cliente.
