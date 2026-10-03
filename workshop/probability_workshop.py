@@ -227,7 +227,7 @@ def conditional_probability(
     """
 
     # TODO: completar
-    return None
+    return np.mean(event[condition])
 
 
 # channel == 0 representa email
@@ -240,13 +240,13 @@ social_condition = channel == 1
 # TODO:
 # calcular P(compra | email)
 
-p_purchase_email = None
+p_purchase_email = conditional_probability(X == 1, email_condition)
 
 
 # TODO:
 # calcular P(compra | social)
 
-p_purchase_social = None
+p_purchase_social = conditional_probability(X == 1, social_condition)
 
 
 print(
