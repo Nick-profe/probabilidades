@@ -3,10 +3,10 @@ import numpy as np
 # TALLER DE PROBABILIDAD APLICADA A MACHINE LEARNING
 # ============================================================
 
-# Nombre:
-# Apellido 1:
-# Apellido 2:
-# Rama:
+# Nombre: Juan Sebastian
+# Apellido 1: Galindez
+# Apellido 2: Franco
+# Rama: Galindez_Franco
 
 
 # 1. CARGA DE DATOS
@@ -53,19 +53,19 @@ def empirical_probability(event):
     """
 
     # TODO: completar
-    return None
+    return np.mean(event)
 
 
 # TODO:
 # calcular P(compra)
 
-p_purchase = None
+p_purchase = empirical_probability(X == 1)
 
 
 # TODO:
 # calcular P(no compra)
 
-p_no_purchase = None
+p_no_purchase = 1 - p_purchase
 
 
 print(
@@ -92,14 +92,13 @@ def empirical_pmf(values):
 
     # TODO: completar
 
-    unique_values = None
-    probabilities = None
+    unique_values,counts = np.unique(values, return_counts=True)
+    probabilities = counts / len(values)
 
     return unique_values, probabilities
 
 
-pmf_values = None
-pmf_probabilities = None
+pmf_values = np.sum(pmf_probabilities, axis=0)
 
 
 # TODO:
