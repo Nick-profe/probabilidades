@@ -168,10 +168,12 @@ def variance(
 
     # TODO: completar
 
-    return None
+    mean = expected_value(values, probabilities)
+
+    return np.sum(probabilities * (values - mean) ** 2)
 
 
-purchase_variance = None
+purchase_variance = variance(pmf_values, pmf_probabilities)
 
 
 print(
@@ -192,14 +194,14 @@ np.random.seed(42)
 # de 10 observaciones de X
 # sin reemplazo.
 
-sample = None
+sample = np.random.choice(X, size=10, replace=False)
 
 
 # TODO:
 # calcular la probabilidad de compra
 # dentro de la muestra.
 
-sample_probability = None
+sample_probability = empirical_probability(sample == 1)
 
 
 print(
