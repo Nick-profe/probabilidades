@@ -313,21 +313,27 @@ print(
 
 # 5. ¿Qué representa la varianza de X?
 # Respuesta:
-# La varianza de X representa la dispersión de los valores de la variable purchased alrededor de su valor esperado.
+# La varianza de X representa la dispersión de los valores de X alrededor de su valor esperado.
 
 
 # 6. ¿Por qué la probabilidad observada en una
 #    muestra puede ser diferente de la probabilidad
 #    observada en toda la población?
 # Respuesta:
-
+# La probabilidad observada en una muestra puede ser diferente de la probabilidad observada en toda la población debido a la variabilidad muestral. Una muestra es solo un subconjunto de la población, y por lo tanto, puede no reflejar exactamente las características de la población completa.
 
 # 7. ¿Cuál es la diferencia entre
 #    P(compra) y P(compra | email)?
 # Respuesta:
+# P(compra) es la probabilidad de que un cliente realice una compra sin tener en cuenta ninguna condición, 
+# mientras que P(compra | email) es la probabilidad de que un cliente realice una compra debido a  que se le ha contactado a través  de email. 
+# La diferencia radica en que la segunda probabilidad está condicionada a un evento específico (canal de comunicación=email).
 
 
 # 8. ¿Cómo se relaciona P(Y = 1 | X)
 #    con un problema de clasificación
 #    en Machine Learning?
-# Respuesta:
+# Respuesta: 
+# # P(Y = 1 | X) representa la probabilidad de que un cliente realice una compra (Y = 1) dado un conjunto de características del cliente (X). 
+# En un problema de clasificación en Machine Learning, el objetivo es construir un modelo que pueda predecir esta probabilidad para nuevos clientes basándose en sus características, 
+# permitiendo así tomar decisiones informadas sobre estrategias de marketing y ventas.
