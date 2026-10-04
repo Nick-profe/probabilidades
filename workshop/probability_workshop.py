@@ -320,7 +320,12 @@ print(
 #    muestra puede ser diferente de la probabilidad
 #    observada en toda la población?
 # Respuesta:
-# La probabilidad observada en una muestra puede ser diferente de la probabilidad observada en toda la población debido a la variabilidad muestral. Una muestra es solo un subconjunto de la población, y por lo tanto, puede no reflejar exactamente las características de la población completa.
+# Porque una muestra solo contiene algunas observaciones de la población, y
+# cada muestra aleatoria da una proporción distinta (variabilidad muestral).
+# En promedio, la diferencia (entre el calculo en una muestra y en toda la población) 
+# es mayor con muestras pequeñas y disminuye al aumentar el tamaño, pero solo se garantiza que
+# desaparezca cuando muestra = toda la población. Por eso, la probabilidad
+# observada en una muestra puede diferir de la de toda la población.
 
 # 7. ¿Cuál es la diferencia entre
 #    P(compra) y P(compra | email)?
