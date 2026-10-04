@@ -38,7 +38,7 @@ print("Número de clientes:", len(customer_id))
 # variable aleatoria Bernoulli.
 
 X = purchased
-
+Y= channel
 print("Primeros valores de X:")
 print(X[:10])
 
@@ -52,21 +52,22 @@ def empirical_probability(event):
     para las cuales un evento es verdadero.
     """
 
-    # TODO: completar
-    return None
+    #TODO : completar
+    purchase_array = np.array(event)
+    p_purchase=np.mean(purchase_array==1)
+    p_no_purchase=np.mean(purchase_array==0)
+      
+    return p_purchase, p_no_purchase
 
 
 # TODO:
 # calcular P(compra)
-
-p_purchase = None
-
-
 # TODO:
 # calcular P(no compra)
+#p_purchase = None
+#p_no_purchase = None
 
-p_no_purchase = None
-
+p_purchase, p_no_purchase = empirical_probability(X)
 
 print(
     "P(compra):",
@@ -91,26 +92,26 @@ def empirical_pmf(values):
     """
 
     # TODO: completar
-
-    unique_values = None
-    probabilities = None
+    #unique_values = None
+    unique_values, counts = np.unique(values, return_counts=True)
+    #probabilities = None
+    probabilities = counts / len(values)
 
     return unique_values, probabilities
 
 
-pmf_values = None
-pmf_probabilities = None
+#pmf_values = None
+#pmf_probabilities = None
 
+pmf_values, pmf_probabilities = empirical_pmf(X)
 
 # TODO:
 # utilizar empirical_pmf(X)
-
 
 print(
     "Valores de la variable:",
     pmf_values
 )
-
 print(
     "Probabilidades:",
     pmf_probabilities
@@ -123,7 +124,8 @@ print(
 # La suma de todas las probabilidades
 # de una PMF debe ser igual a 1.
 
-pmf_sum = None
+#pmf_sum = None
+pmf_sum = np.sum(pmf_probabilities)
 
 print(
     "Suma de probabilidades:",
@@ -143,11 +145,11 @@ def expected_value(
     """
 
     # TODO: completar
-    return None
+    expected_purchase = np.sum(values * probabilities)
+    return expected_purchase
 
 
-expected_purchase = None
-
+expected_purchase = expected_value(pmf_values, pmf_probabilities)
 
 print(
     "Valor esperado de X:",
@@ -165,20 +167,25 @@ def variance(
     """
     Calcula Var(X).
     """
+    values = np.asarray(values, dtype=float)
+    probabilities = np.asarray(probabilities, dtype=float)
 
+    expected_val = np.sum(values * probabilities)
+    purchase_variance=np.sum(probabilities * (values - expected_val) ** 2)
     # TODO: completar
 
-    return None
+    return purchase_variance
 
 
-purchase_variance = None
+purchase_variance = variance(pmf_values, pmf_probabilities)
+comprobacion = p_purchase * (1 - p_purchase)
 
 
 print(
     "Varianza de X:",
     purchase_variance
 )
-
+print("Comprobación de la varianza:", comprobacion)
 
 # 8. MUESTREO
 # ------------------------------------------------------------
@@ -192,14 +199,14 @@ np.random.seed(42)
 # de 10 observaciones de X
 # sin reemplazo.
 
-sample = None
+sample = np.random.choice(X, size=10, replace=False)
 
 
 # TODO:
 # calcular la probabilidad de compra
 # dentro de la muestra.
 
-sample_probability = None
+sample_probability = np.mean(sample == 1)
 
 
 print(
@@ -223,9 +230,14 @@ def conditional_probability(
     """
     Calcula P(evento | condición).
     """
-
     # TODO: completar
-    return None
+    event = np.asarray(event)
+    condition = np.asarray(condition)
+
+    p_event_condition= np.mean(event[condition]==1)
+    
+    
+    return p_event_condition
 
 
 # channel == 0 representa email
@@ -238,13 +250,13 @@ social_condition = channel == 1
 # TODO:
 # calcular P(compra | email)
 
-p_purchase_email = None
+p_purchase_email = conditional_probability(X, email_condition)
 
 
 # TODO:
 # calcular P(compra | social)
 
-p_purchase_social = None
+p_purchase_social = conditional_probability(X, social_condition)
 
 
 print(
@@ -279,24 +291,29 @@ print(
 # 1. ¿Por qué purchased puede considerarse
 #    una variable aleatoria Bernoulli?
 # Respuesta:
+# Puesto que una variable aleatoria Bernoulli, es una variable discreta que solo puede tomar 2 valores posibles, siendo la forma más simple de
+# modelar un experimento binario, purchased puede considerarse una variable de este tipo, puesto que solo puede tomar 2 valores posibles, 1 si el cliente realizó una compra 
+# y 0 si no realizó una compra.
 
 
 # 2. ¿Qué representa P(compra) dentro del problema?
 # Respuesta:
+# P(compra) representa la probabilidad de que un cliente realice una compra, es decir, la proporción de clientes en la población que han realizado una compra.
 
 
 # 3. ¿Por qué las probabilidades de la PMF
 #    deben sumar 1?
 # Respuesta:
-
+# Las probabilidades de la PMF deben sumar 1 porque representan todos los posibles resultados de un experimento, y la probabilidad total debe ser 1.
 
 # 4. ¿Qué representa E[X] cuando X es
 #    la variable purchased?
 # Respuesta:
-
+# E[X] representa el valor esperado de la variable purchased, es decir, la probabilidad de que un cliente realice una compra.
 
 # 5. ¿Qué representa la varianza de X?
 # Respuesta:
+# La varianza de X representa la dispersión de los valores de la variable purchased alrededor de su valor esperado.
 
 
 # 6. ¿Por qué la probabilidad observada en una
