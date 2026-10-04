@@ -262,39 +262,43 @@ print(
 
 # 1. ¿Por qué purchased puede considerarse
 #    una variable aleatoria Bernoulli?
-# Respuesta:
+# Respuesta: Porque solo tiene dos resultados posibles: 1 si el cliente compra y 0 si no compra. Por eso se puede representar como una variable Bernoulli.
 
 
 # 2. ¿Qué representa P(compra) dentro del problema?
-# Respuesta:
+# Respuesta: Representa la proporción de clientes que compraron en el dataset. Compraron 23 de los 40 clientes, así que la probabilidad empírica es 0.575, equivalente al 57.5 %.
 
 
 # 3. ¿Por qué las probabilidades de la PMF
 #    deben sumar 1?
-# Respuesta:
+# Respuesta: Porque la PMF incluye todos los resultados posibles. El cliente compra o no compra, así que sus probabilidades deben sumar el 100 %: 0.575 + 0.425 = 1.
 
 
 # 4. ¿Qué representa E[X] cuando X es
 #    la variable purchased?
-# Respuesta:
+# Respuesta: Como X toma los valores 0 y 1, su valor esperado coincide con la probabilidad de compra. Aquí E[X] = 0.575, lo que corresponde a una proporción esperada de compradores 
+# del 57.5 %.
 
 
 # 5. ¿Qué representa la varianza de X?
-# Respuesta:
+# Respuesta: Mide cuánto se dispersan los valores de X alrededor de su media. Para una Bernoulli se calcula como p × (1 − p), que aquí da 0.244375. Está cerca del máximo de 
+# 0.25 porque las proporciones de compra y no compra son relativamente parecidas.
 
 
 # 6. ¿Por qué la probabilidad observada en una
 #    muestra puede ser diferente de la probabilidad
 #    observada en toda la población?
-# Respuesta:
+# Respuesta: Porque una muestra seleccionada al azar no necesariamente conserva las proporciones de toda la población. En los 10 clientes seleccionados compró el 40 %, mientras 
+# que en el conjunto completo compró el 57.5 %.
 
 
 # 7. ¿Cuál es la diferencia entre
 #    P(compra) y P(compra | email)?
-# Respuesta:
+# Respuesta: P(compra) considera a todos los clientes y es 57.5 %. P(compra | email) considera únicamente a los contactados por email: compraron 13 de esos 20 clientes, por lo que es 65 %.
 
 
 # 8. ¿Cómo se relaciona P(Y = 1 | X)
 #    con un problema de clasificación
 #    en Machine Learning?
-# Respuesta:
+# Respuesta: Representa la probabilidad de que un cliente compre dadas sus características X, como el canal de contacto. Un modelo puede estimar esa probabilidad y compararla con un 
+# umbral, como 0.5, para clasificar si compra o no compra. Aquí Y representa la compra y X las características del cliente.
