@@ -287,7 +287,12 @@ Dentro del problema nos dice qué tan efectiva fue la campaña en general, sin d
 #    deben sumar 1?
 # Respuesta:
 
-
+"""
+ Las probabilidades de una PMF deben sumar 1 porque la PMF recoge todos los valores posibles de la variable aleatoria, y en cada
+ observación alguno de ellos tiene que ocurrir. Aquí los valores posibles son 0 y 1, con probabilidades 0.425 y 0.575, y su suma es 1.0. 
+ Si la suma fuera distinta de 1, significaría que falta algún resultado posible o que hay un error en el cálculo de las probabilidades.
+ 
+"""
 
 # 4. ¿Qué representa E[X] cuando X es
 #    la variable purchased?
