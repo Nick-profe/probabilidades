@@ -309,6 +309,13 @@ Por eso E[X] = 0.575 se interpreta comoque, en promedio, 57.5% de los clientes c
 # 5. ¿Qué representa la varianza de X?
 # Respuesta:
 
+"""
+La varianza mide qué tanto se alejan los valores de X de su promedio, es decir, qué tan dispersos o impredecibles son los resultados.
+Para una Bernoulli, Var(X) = p(1 - p) = 0.575 x 0.425 = 0.244375. Este valor es cercano al máximo posible (0.25), que ocurre cuando p = 0.5, 
+porque la mitad de los clientes compra y la otra mitad no, y por eso es difícil predecir qué hará un cliente individual. 
+Si p estuviera cerca de 0 o de 1, la varianza sería pequeña y el resultado sería más predecible.
+
+"""
 
 # 6. ¿Por qué la probabilidad observada en una
 #    muestra puede ser diferente de la probabilidad
