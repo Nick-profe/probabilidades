@@ -334,6 +334,15 @@ Esta diferencia se llama error de muestreo. Mientras más grande sea la muestra,
 #    P(compra) y P(compra | email)?
 # Respuesta:
 
+"""
+P(compra) es la probabilidad de compra calculada con todos los clientes, sin importar el canal de contacto: 0.575. 
+En cambio, P(compra | email) es una probabilidad condicional, calculada solo con los clientes que fueron contactados por email: 0.65 (13 de 20). 
+La condición "| email" reduce el conjunto de datos a un subgrupo, y por eso el resultado cambia. Compararla con P(compra | social) = 0.5 muestra
+que el email tuvo mejor desempeño que el canal social en esta campaña.
+
+"""
+
+
 
 # 8. ¿Cómo se relaciona P(Y = 1 | X)
 #    con un problema de clasificación
