@@ -245,39 +245,50 @@ print(
 
 # 1. ¿Por qué purchased puede considerarse
 #    una variable aleatoria Bernoulli?
-# Respuesta:
+# Respuesta: Porque purschaed representa un experimento con dos 
+# resultados posibles.
+#  1 si el cliente realiza una compra y 0 si no la realiza.
+# Una variable Bernoulli precisamente representa un experimento con dos posibles resultados.
 
 
 # 2. ¿Qué representa P(compra) dentro del problema?
-# Respuesta:
+# Respuesta: Representa la proporción de clientes del dataset de la población observada
+#  que realizaron una compra
 
 
 # 3. ¿Por qué las probabilidades de la PMF
 #    deben sumar 1?
-# Respuesta:
+# Respuesta: Porque la PMF cubre todos los valores posibles de la
+# variable y cada observación toma exactamente uno de ellos. Algo tiene que ocurrir,
+# así que entre todos los valores se reparte el
+# 100% de la probabilidad, como en este resultado que se obtuvo 0.425 + 0.575 = 1
 
 
 # 4. ¿Qué representa E[X] cuando X es
 #    la variable purchased?
-# Respuesta:
+# Respuesta: Representa el valor promedio esperado de la variable purchased. 
+# Como X, solamente puede ser 0 o 1, también puede interpretarse como la probabilidad de compra
 
 
 # 5. ¿Qué representa la varianza de X?
-# Respuesta:
+# Respuesta: Representa la variabilidad de la variable purchased. En este caso, indica
+# cuán dispersas están las compras en relación con la media.
 
 
 # 6. ¿Por qué la probabilidad observada en una
 #    muestra puede ser diferente de la probabilidad
 #    observada en toda la población?
-# Respuesta:
+# Respuesta: Porque una muestra contiene solamente una parte de las observaciones y
+#  especialmente cuando es pequeña, puede no representar exactamente las proporciones de toda la población.
 
 
 # 7. ¿Cuál es la diferencia entre
 #    P(compra) y P(compra | email)?
-# Respuesta:
-
+# Respuesta: Para este caso p(compra) respresenta únicamente la probabilidad de compra en toda la población, 
+# mientras que P(compra | email) representa la probabilidad de compra con la condición de que el cliente haya sido contactado por email. 
 
 # 8. ¿Cómo se relaciona P(Y = 1 | X)
 #    con un problema de clasificación
 #    en Machine Learning?
-# Respuesta:
+# Respuesta: Representa la probabilidad estimada de que una observación pertenezca a la clase 1 dadas sus características X. 
+# En clasificación binaria, esa probabilidad puede utilizarse para determinar la clase predicha mediante un umbral
