@@ -253,41 +253,71 @@ print(
 # 11. PREGUNTAS DE INTERPRETACIÓN
 # ------------------------------------------------------------
 
-# 1. ¿Por qué purchased puede considerarse
+# # 1. ¿Por qué purchased puede considerarse
 #    una variable aleatoria Bernoulli?
-# Respuesta:
+# Respuesta: Porque describe un experimento con solo dos resultados
+# posibles y excluyentes para cada cliente: compra (X = 1) o no compra
+# (X = 0). La distribución queda determinada por un único parámetro p,
+# la probabilidad de éxito, que aquí estimamos como 0.575.
 
 
 # 2. ¿Qué representa P(compra) dentro del problema?
-# Respuesta:
+# Respuesta: Es la tasa de conversión de la campaña: la proporción de
+# clientes que realizaron una compra. Con P(compra) = 0.575, el 57.5 %
+# de los clientes compró. Es una estimación empírica de p a partir
+# de los datos observados.
 
 
 # 3. ¿Por qué las probabilidades de la PMF
 #    deben sumar 1?
-# Respuesta:
+# Respuesta: Porque los valores posibles de X (0 y 1) cubren todos los
+# resultados posibles y son mutuamente excluyentes: todo cliente
+# compra o no compra. La probabilidad de que ocurra alguno de ellos
+# es 1. En nuestro caso 0.425 + 0.575 = 1.0.
 
 
 # 4. ¿Qué representa E[X] cuando X es
 #    la variable purchased?
-# Respuesta:
+# Respuesta: Para una Bernoulli, E[X] = 0·(1 − p) + 1·p = p, así que el
+# valor esperado coincide con la probabilidad de compra (0.575). Se
+# interpreta como la tasa de compra promedio: si se repitiera el
+# experimento con muchos clientes, en promedio el 57.5 % compraría.
 
 
 # 5. ¿Qué representa la varianza de X?
-# Respuesta:
+# Respuesta: Mide la dispersión o incertidumbre del resultado de
+# compra. Para una Bernoulli, Var(X) = p(1 − p) = 0.575 · 0.425 =
+# 0.244375. Es máxima (0.25) cuando p = 0.5, es decir, cuando es más
+# difícil predecir si un cliente comprará; nuestro valor está cerca
+# de ese máximo, lo que indica alta incertidumbre.
 
 
 # 6. ¿Por qué la probabilidad observada en una
 #    muestra puede ser diferente de la probabilidad
 #    observada en toda la población?
-# Respuesta:
+# Respuesta: Por la variabilidad muestral. Una muestra pequeña
+# (10 clientes) puede, por azar, incluir más o menos compradores que
+# la proporción real. Por eso obtuvimos 0.4 en la muestra frente a
+# 0.575 en la población. A mayor tamaño de muestra, la estimación
+# tiende a acercarse al valor poblacional (ley de los grandes números).
 
 
 # 7. ¿Cuál es la diferencia entre
 #    P(compra) y P(compra | email)?
-# Respuesta:
+# Respuesta: P(compra) es la probabilidad de compra considerando a todos
+# los clientes (0.575). P(compra | email) restringe el análisis solo a
+# los clientes contactados por email (0.65). La condicional incorpora
+# información adicional: el canal. Como P(compra | email) = 0.65 es
+# mayor que P(compra | social) = 0.5, el canal parece estar asociado
+# con la probabilidad de compra.
 
 
 # 8. ¿Cómo se relaciona P(Y = 1 | X)
 #    con un problema de clasificación
 #    en Machine Learning?
-# Respuesta:
+# Respuesta: En clasificación binaria, un modelo (por ejemplo, regresión
+# logística) aprende a estimar P(Y = 1 | X): la probabilidad de que un
+# cliente compre dadas sus características (canal, historial, etc.).
+# Lo que calculamos en la sección 9 es una versión simple de esto con
+# una sola característica (el canal). Luego se aplica un umbral, por
+# ejemplo 0.5, para clasificar a cada cliente como comprador o no.
