@@ -3,10 +3,10 @@ import numpy as np
 # TALLER DE PROBABILIDAD APLICADA A MACHINE LEARNING
 # ============================================================
 
-# Nombre:
-# Apellido 1:
-# Apellido 2:
-# Rama:
+# Nombre: Alfonso Marino
+# Apellido 1: Alfonso 
+# Apellido 2: Lopez
+# Rama: alfonso_lopez 
 
 
 # 1. CARGA DE DATOS
