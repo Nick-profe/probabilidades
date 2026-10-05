@@ -3,10 +3,10 @@ import numpy as np
 # TALLER DE PROBABILIDAD APLICADA A MACHINE LEARNING
 # ============================================================
 
-# Nombre:
-# Apellido 1:
-# Apellido 2:
-# Rama:
+# Nombre: Leonardo
+# Apellido 1: Monsalve
+# Apellido 2: Gomez
+# Rama: Monsalve_Gomez
 
 
 # 1. CARGA DE DATOS
@@ -52,20 +52,17 @@ def empirical_probability(event):
     para las cuales un evento es verdadero.
     """
 
-    # TODO: completar
-    return None
+    return np.mean(event)
 
 
-# TODO:
 # calcular P(compra)
 
-p_purchase = None
+p_purchase = empirical_probability(X == 1)
 
 
-# TODO:
 # calcular P(no compra)
 
-p_no_purchase = None
+p_no_purchase = empirical_probability(X == 0)
 
 
 print(
@@ -90,20 +87,15 @@ def empirical_pmf(values):
     discreta y sus probabilidades empíricas.
     """
 
-    # TODO: completar
-
-    unique_values = None
-    probabilities = None
+    unique_values, counts = np.unique(values, return_counts=True)
+    probabilities = counts / len(values)
 
     return unique_values, probabilities
 
 
-pmf_values = None
-pmf_probabilities = None
-
-
-# TODO:
 # utilizar empirical_pmf(X)
+
+pmf_values, pmf_probabilities = empirical_pmf(X)
 
 
 print(
@@ -123,7 +115,7 @@ print(
 # La suma de todas las probabilidades
 # de una PMF debe ser igual a 1.
 
-pmf_sum = None
+pmf_sum = np.sum(pmf_probabilities)
 
 print(
     "Suma de probabilidades:",
@@ -142,11 +134,10 @@ def expected_value(
     Calcula E[X].
     """
 
-    # TODO: completar
-    return None
+    return np.sum(values * probabilities)
 
 
-expected_purchase = None
+expected_purchase = expected_value(pmf_values, pmf_probabilities)
 
 
 print(
@@ -166,12 +157,12 @@ def variance(
     Calcula Var(X).
     """
 
-    # TODO: completar
+    mean = expected_value(values, probabilities)
 
-    return None
+    return np.sum((values - mean) ** 2 * probabilities)
 
 
-purchase_variance = None
+purchase_variance = variance(pmf_values, pmf_probabilities)
 
 
 print(
@@ -187,19 +178,17 @@ print(
 np.random.seed(42)
 
 
-# TODO:
 # seleccionar una muestra aleatoria
 # de 10 observaciones de X
 # sin reemplazo.
 
-sample = None
+sample = np.random.choice(X, size=10, replace=False)
 
 
-# TODO:
 # calcular la probabilidad de compra
 # dentro de la muestra.
 
-sample_probability = None
+sample_probability = np.mean(sample == 1)
 
 
 print(
@@ -224,8 +213,7 @@ def conditional_probability(
     Calcula P(evento | condición).
     """
 
-    # TODO: completar
-    return None
+    return np.sum(event & condition) / np.sum(condition)
 
 
 # channel == 0 representa email
@@ -235,16 +223,14 @@ email_condition = channel == 0
 social_condition = channel == 1
 
 
-# TODO:
 # calcular P(compra | email)
 
-p_purchase_email = None
+p_purchase_email = conditional_probability(X == 1, email_condition)
 
 
-# TODO:
 # calcular P(compra | social)
 
-p_purchase_social = None
+p_purchase_social = conditional_probability(X == 1, social_condition)
 
 
 print(
@@ -281,6 +267,8 @@ print(
 # Respuesta:
 
 
+
+
 # 2. ¿Qué representa P(compra) dentro del problema?
 # Respuesta:
 
@@ -288,6 +276,7 @@ print(
 # 3. ¿Por qué las probabilidades de la PMF
 #    deben sumar 1?
 # Respuesta:
+
 
 
 # 4. ¿Qué representa E[X] cuando X es
@@ -313,4 +302,4 @@ print(
 # 8. ¿Cómo se relaciona P(Y = 1 | X)
 #    con un problema de clasificación
 #    en Machine Learning?
-# Respuesta:
+# Respuesta:python workshop/probability_workshop.py
