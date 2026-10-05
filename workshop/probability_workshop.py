@@ -266,6 +266,11 @@ print(
 #    una variable aleatoria Bernoulli?
 # Respuesta:
 
+"""
+Porque solo toma dos valores, 1 (compra) y 0 (no compra),
+y cada cliente es un ensayo con una probabilidad de éxito p.
+
+"""
 
 
 
