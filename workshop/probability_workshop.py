@@ -166,39 +166,50 @@ print("P(compra | social):", p_purchase_social)
 
 # 1. ¿Por qué purchased puede considerarse
 #    una variable aleatoria Bernoulli?
-# Respuesta:
-
+# Respuesta: Porque solo toma dos valores posibles (0 o 1), representando
+# un experimento de "éxito o fracaso" — el cliente compró o no compró —
+# que es exactamente la definición de una variable Bernoulli.
 
 # 2. ¿Qué representa P(compra) dentro del problema?
-# Respuesta:
-
+# Respuesta: Es la proporción de clientes de toda la campaña que terminaron
+# comprando, es decir, la probabilidad estimada de que un cliente cualquiera
+# realice una compra.
 
 # 3. ¿Por qué las probabilidades de la PMF
 #    deben sumar 1?
-# Respuesta:
-
+# Respuesta: Porque la PMF cubre todos los valores posibles que puede tomar
+# la variable, y la certeza de que ocurra alguno de ellos es del 100%, es
+# decir, probabilidad total 1.
 
 # 4. ¿Qué representa E[X] cuando X es
 #    la variable purchased?
-# Respuesta:
-
+# Respuesta: Es el promedio esperado de la variable, que para una Bernoulli
+# coincide exactamente con P(compra) — el valor esperado "resume" la
+# tendencia general de los clientes a comprar.
 
 # 5. ¿Qué representa la varianza de X?
-# Respuesta:
-
+# Respuesta: Mide qué tan dispersos o inciertos son los resultados; en una
+# Bernoulli, la varianza es máxima cuando p está cerca de 0.5 (mayor
+# incertidumbre) y menor cuando p está cerca de 0 o 1.
 
 # 6. ¿Por qué la probabilidad observada en una
 #    muestra puede ser diferente de la probabilidad
 #    observada en toda la población?
-# Respuesta:
-
+# Respuesta: Porque una muestra es solo un subconjunto aleatorio de los
+# datos, y por azar puede no reflejar exactamente la misma proporción que
+# tiene la población completa — a eso se le llama variabilidad muestral.
 
 # 7. ¿Cuál es la diferencia entre
 #    P(compra) y P(compra | email)?
-# Respuesta:
-
+# Respuesta: P(compra) es la probabilidad general sin tener en cuenta el
+# canal, mientras que P(compra | email) es la probabilidad de compra
+# considerando únicamente a los clientes que fueron contactados por email,
+# es decir, condicionada a esa información adicional.
 
 # 8. ¿Cómo se relaciona P(Y = 1 | X)
 #    con un problema de clasificación
 #    en Machine Learning?
-# Respuesta:
+# Respuesta: Es exactamente lo que modelos como la regresión logística
+# intentan estimar: la probabilidad de que ocurra la clase positiva (Y=1)
+# dado un conjunto de características X del cliente, para luego usar esa
+# probabilidad y decidir una predicción.
