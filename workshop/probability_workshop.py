@@ -3,10 +3,10 @@ import numpy as np
 # TALLER DE PROBABILIDAD APLICADA A MACHINE LEARNING
 # ============================================================
 
-# Nombre:
-# Apellido 1:
-# Apellido 2:
-# Rama:
+# Nombre: Andres
+# Apellido 1: Pinilla
+# Apellido 2: Victoria
+# Rama: pinilla_victoria
 
 
 # 1. CARGA DE DATOS
@@ -29,14 +29,6 @@ print("Número de clientes:", len(customer_id))
 # 2. VARIABLE ALEATORIA
 # ------------------------------------------------------------
 
-# La variable purchased representa:
-#
-# X = 1 si el cliente realizó una compra
-# X = 0 si el cliente no realizó una compra
-#
-# Por tanto, X puede interpretarse como una
-# variable aleatoria Bernoulli.
-
 X = purchased
 
 print("Primeros valores de X:")
@@ -51,37 +43,18 @@ def empirical_probability(event):
     Calcula la proporción de observaciones
     para las cuales un evento es verdadero.
     """
-
-    # TODO: completar
-    return None
+    return np.mean(event)
 
 
-# TODO:
-# calcular P(compra)
+p_purchase = empirical_probability(purchased == 1)
 
-p_purchase = None
+p_no_purchase = empirical_probability(purchased == 0)
 
-
-# TODO:
-# calcular P(no compra)
-
-p_no_purchase = None
-
-
-print(
-    "P(compra):",
-    p_purchase
-)
-
-print(
-    "P(no compra):",
-    p_no_purchase
-)
+print("P(compra):", p_purchase)
+print("P(no compra):", p_no_purchase)
 
 
 # 4. PMF
-# Probability Mass Function
-# Función de Masa de Probabilidad
 # ------------------------------------------------------------
 
 def empirical_pmf(values):
@@ -89,173 +62,88 @@ def empirical_pmf(values):
     Calcula los valores posibles de una variable
     discreta y sus probabilidades empíricas.
     """
-
-    # TODO: completar
-
-    unique_values = None
-    probabilities = None
-
+    unique_values, counts = np.unique(values, return_counts=True)
+    probabilities = counts / len(values)
     return unique_values, probabilities
 
 
-pmf_values = None
-pmf_probabilities = None
+pmf_values, pmf_probabilities = empirical_pmf(X)
 
-
-# TODO:
-# utilizar empirical_pmf(X)
-
-
-print(
-    "Valores de la variable:",
-    pmf_values
-)
-
-print(
-    "Probabilidades:",
-    pmf_probabilities
-)
+print("Valores de la variable:", pmf_values)
+print("Probabilidades:", pmf_probabilities)
 
 
 # 5. VERIFICACIÓN DE LA PMF
 # ------------------------------------------------------------
 
-# La suma de todas las probabilidades
-# de una PMF debe ser igual a 1.
+pmf_sum = np.sum(pmf_probabilities)
 
-pmf_sum = None
-
-print(
-    "Suma de probabilidades:",
-    pmf_sum
-)
+print("Suma de probabilidades:", pmf_sum)
 
 
 # 6. VALOR ESPERADO
 # ------------------------------------------------------------
 
-def expected_value(
-    values,
-    probabilities
-):
+def expected_value(values, probabilities):
     """
     Calcula E[X].
     """
-
-    # TODO: completar
-    return None
+    return np.sum(values * probabilities)
 
 
-expected_purchase = None
+expected_purchase = expected_value(pmf_values, pmf_probabilities)
 
-
-print(
-    "Valor esperado de X:",
-    expected_purchase
-)
+print("Valor esperado de X:", expected_purchase)
 
 
 # 7. VARIANZA
 # ------------------------------------------------------------
 
-def variance(
-    values,
-    probabilities
-):
+def variance(values, probabilities):
     """
     Calcula Var(X).
     """
-
-    # TODO: completar
-
-    return None
+    mean = expected_value(values, probabilities)
+    return np.sum(probabilities * (values - mean) ** 2)
 
 
-purchase_variance = None
+purchase_variance = variance(pmf_values, pmf_probabilities)
 
-
-print(
-    "Varianza de X:",
-    purchase_variance
-)
+print("Varianza de X:", purchase_variance)
 
 
 # 8. MUESTREO
 # ------------------------------------------------------------
 
-# Para que los resultados sean reproducibles
 np.random.seed(42)
 
+sample = np.random.choice(X, size=10, replace=False)
 
-# TODO:
-# seleccionar una muestra aleatoria
-# de 10 observaciones de X
-# sin reemplazo.
+sample_probability = empirical_probability(sample == 1)
 
-sample = None
-
-
-# TODO:
-# calcular la probabilidad de compra
-# dentro de la muestra.
-
-sample_probability = None
-
-
-print(
-    "Probabilidad de compra en la población:",
-    p_purchase
-)
-
-print(
-    "Probabilidad de compra en la muestra:",
-    sample_probability
-)
+print("Probabilidad de compra en la población:", p_purchase)
+print("Probabilidad de compra en la muestra:", sample_probability)
 
 
 # 9. PROBABILIDAD CONDICIONAL
 # ------------------------------------------------------------
 
-def conditional_probability(
-    event,
-    condition
-):
+def conditional_probability(event, condition):
     """
     Calcula P(evento | condición).
     """
-
-    # TODO: completar
-    return None
+    return np.mean(event[condition])
 
 
-# channel == 0 representa email
 email_condition = channel == 0
-
-# channel == 1 representa social
 social_condition = channel == 1
 
+p_purchase_email = conditional_probability(purchased == 1, email_condition)
 
-# TODO:
-# calcular P(compra | email)
+p_purchase_social = conditional_probability(purchased == 1, social_condition)
 
-p_purchase_email = None
-
-
-# TODO:
-# calcular P(compra | social)
-
-p_purchase_social = None
-
-
-print(
-    "P(compra | email):",
-    p_purchase_email
-)
-
-print(
-    "P(compra | social):",
-    p_purchase_social
-)
+print("P(compra | email):", p_purchase_email)
+print("P(compra | social):", p_purchase_social)
 
 
 # 10. CONEXIÓN CON MACHINE LEARNING
