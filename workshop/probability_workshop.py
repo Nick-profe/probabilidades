@@ -166,39 +166,62 @@ print("P(compra | social):", p_purchase_social)
 
 # 1. ¿Por qué purchased puede considerarse
 #    una variable aleatoria Bernoulli?
-# Respuesta:
+# Respuesta: Porque cada cliente solo puede hacer una de dos cosas: comprar (1)
+# o no comprar (0). Es un experimento con dos resultados posibles y una
+# probabilidad p de que salga "compra", que es justo lo que describe una
+# Bernoulli.
 
 
 # 2. ¿Qué representa P(compra) dentro del problema?
-# Respuesta:
+# Respuesta: Es qué tan probable es que un cliente cualquiera termine comprando
+# después de la campaña. En la práctica es el porcentaje de clientes que
+# compraron, o sea la tasa de conversión.
 
 
 # 3. ¿Por qué las probabilidades de la PMF
 #    deben sumar 1?
-# Respuesta:
+# Respuesta: Porque la PMF tiene que cubrir todo lo que puede pasar. Aquí un
+# cliente compra o no compra, no hay una tercera opción, así que las dos
+# probabilidades juntas deben dar 1 (100%). Si no suman 1, algo está mal en
+# el cálculo o en los datos.
 
 
 # 4. ¿Qué representa E[X] cuando X es
 #    la variable purchased?
-# Respuesta:
+# Respuesta: Como X solo vale 0 o 1, al calcular E[X] lo único que queda es
+# P(X=1), así que E[X] es igual a la probabilidad de compra. Se puede leer
+# como la fracción promedio de clientes que compra.
 
 
 # 5. ¿Qué representa la varianza de X?
-# Respuesta:
+# Respuesta: Indica qué tan dispersos o impredecibles son los resultados. En
+# una Bernoulli es p(1-p): si p está cerca de 0.5 hay mucha incertidumbre
+# porque comprar y no comprar son casi igual de probables, y si p está cerca
+# de 0 o de 1 el resultado es mucho más predecible y la varianza baja.
 
 
 # 6. ¿Por qué la probabilidad observada en una
 #    muestra puede ser diferente de la probabilidad
 #    observada en toda la población?
-# Respuesta:
+# Respuesta: Porque una muestra es solo un pedacito de la población y depende
+# de a quiénes les tocó salir. Con solo 10 clientes, por azar pueden salir más
+# o menos compradores de los que realmente hay. Entre más grande sea la
+# muestra, más se parece a la población (ley de los grandes números).
 
 
 # 7. ¿Cuál es la diferencia entre
 #    P(compra) y P(compra | email)?
-# Respuesta:
+# Respuesta: P(compra) mira a todos los clientes sin importar el canal,
+# mientras que P(compra | email) solo mira a los que llegaron por email. Si
+# los dos valores son distintos, quiere decir que el canal influye en la
+# compra y que las dos variables no son independientes.
 
 
 # 8. ¿Cómo se relaciona P(Y = 1 | X)
 #    con un problema de clasificación
 #    en Machine Learning?
-# Respuesta:
+# Respuesta: Es justo lo que un modelo de clasificación intenta estimar: la
+# probabilidad de que un cliente compre (Y=1) dadas sus características X,
+# como el canal o el valor de la orden. Modelos como la regresión logística
+# lo calculan y después se decide con un umbral, normalmente 0.5: si la
+# probabilidad es mayor, se predice que compra.
