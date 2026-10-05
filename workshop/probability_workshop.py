@@ -167,13 +167,21 @@ def variance(
     """
     Calcula Var(X).
     """
+    mean = expected_value(
+        values,
+        probabilities
+    )
 
     # TODO: completar
 
-    return None
+    return np.sum(
+        (values - mean)** 2 * probabilities
+    )
 
 
-purchase_variance = None
+purchase_variance = variance(
+    pmf_values,
+    pmf_probabilities)
 
 
 print(
@@ -194,14 +202,20 @@ np.random.seed(42)
 # de 10 observaciones de X
 # sin reemplazo.
 
-sample = None
+sample = np.random.choice(
+    X,
+    size = 10,
+    replace = False
+)
 
 
 # TODO:
 # calcular la probabilidad de compra
 # dentro de la muestra.
 
-sample_probability = None
+sample_probability = np.mean(
+    sample == 1
+)
 
 
 print(
@@ -227,7 +241,12 @@ def conditional_probability(
     """
 
     # TODO: completar
-    return None
+    if np.sum(condition) == 0:
+        return 0.0
+    
+    return np.mean(
+        event[condition]
+    )
 
 
 # channel == 0 representa email
@@ -240,13 +259,19 @@ social_condition = channel == 1
 # TODO:
 # calcular P(compra | email)
 
-p_purchase_email = None
+p_purchase_email = conditional_probability(
+    X == 0,
+    email_condition
+)
 
 
 # TODO:
 # calcular P(compra | social)
 
-p_purchase_social = None
+p_purchase_social = conditional_probability(
+    X == 1,
+    social_condition
+)
 
 
 print(
@@ -280,39 +305,39 @@ print(
 
 # 1. ¿Por qué purchased puede considerarse
 #    una variable aleatoria Bernoulli?
-# Respuesta:
+# Respuesta: purchased puede considerarse una variable aleatoria Bernoulli porque solo tiene dos posibles resultados, 1 si el cliente compra y 0 si no lo hace.
 
 
 # 2. ¿Qué representa P(compra) dentro del problema?
-# Respuesta:
+# Respuesta: Dentro del problema P(compra) representa la proporcion de clientes que realizaron una compra dentro del conjunto de datos.
 
 
 # 3. ¿Por qué las probabilidades de la PMF
 #    deben sumar 1?
-# Respuesta:
+# Respuesta: Las probabilidades de la PMF deben sumar 1 porque esta distribuye toda la probabilidad entre los posibles valores de la variable aleatoria. 
 
 
 # 4. ¿Qué representa E[X] cuando X es
 #    la variable purchased?
-# Respuesta:
+# Respuesta: Cuando X es la variable purchased, E[X] representa el promedio esperado de compras. Como X toma los valores de 0 y 1 E[X] tambien representa la probabilidad de compra.
 
 
 # 5. ¿Qué representa la varianza de X?
-# Respuesta:
+# Respuesta: La varianza de X representa que tanto se dispersan los resultados de compra y no compra alrededor de su valor esperado.
 
 
 # 6. ¿Por qué la probabilidad observada en una
 #    muestra puede ser diferente de la probabilidad
 #    observada en toda la población?
-# Respuesta:
+# Respuesta: Porque una muestra contiene una parte de las observaciones de la poblacion. Debido al muestreo aleatorio, sus resultados pueden variar.
 
 
 # 7. ¿Cuál es la diferencia entre
 #    P(compra) y P(compra | email)?
-# Respuesta:
+# Respuesta: P(compra) representa la probailidad general de compra mientras P(compra | email) representa la probabilidad de compra cuando sabemos que el cliente pertenece al canal email.
 
 
 # 8. ¿Cómo se relaciona P(Y = 1 | X)
 #    con un problema de clasificación
 #    en Machine Learning?
-# Respuesta:
+# Respuesta: Representa la probabilidad estimada de que la variable objetivo "Y"" pertenezca a la clase 1 dadas las  caracteristicas X del cliente. Esta probabilidad puede utilizarse para tomar una decision de clasificacion.
