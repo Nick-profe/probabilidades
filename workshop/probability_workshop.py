@@ -3,10 +3,10 @@ import numpy as np
 # TALLER DE PROBABILIDAD APLICADA A MACHINE LEARNING
 # ============================================================
 
-# Nombre:
-# Apellido 1:
-# Apellido 2:
-# Rama:
+# Nombre: Karolain
+# Apellido 1: Duque
+# Apellido 2: Saavedra
+# Rama: duque_saavedra
 
 
 # 1. CARGA DE DATOS
@@ -52,20 +52,16 @@ def empirical_probability(event):
     para las cuales un evento es verdadero.
     """
 
-    # TODO: completar
-    return None
+    return np.mean(event)
 
-
-# TODO:
 # calcular P(compra)
 
-p_purchase = None
+p_purchase = empirical_probability(X==1)
 
 
-# TODO:
 # calcular P(no compra)
 
-p_no_purchase = None
+p_no_purchase = empirical_probability(X==0)
 
 
 print(
@@ -92,14 +88,17 @@ def empirical_pmf(values):
 
     # TODO: completar
 
-    unique_values = None
-    probabilities = None
+    unique_values, counts = np.unique(
+        values,
+        return_counts=True
+    )
+    probabilities = counts / len(values)
 
     return unique_values, probabilities
 
 
-pmf_values = None
-pmf_probabilities = None
+pmf_values = empirical_pmf(X)
+pmf_probabilities = empirical_pmf(X)
 
 
 # TODO:
@@ -123,7 +122,7 @@ print(
 # La suma de todas las probabilidades
 # de una PMF debe ser igual a 1.
 
-pmf_sum = None
+pmf_sum = np.sum(pmf_probabilities)
 
 print(
     "Suma de probabilidades:",
@@ -143,10 +142,13 @@ def expected_value(
     """
 
     # TODO: completar
-    return None
+    return np.sum(values*probabilities)
 
 
-expected_purchase = None
+expected_purchase = expected_value(
+    pmf_values,
+    pmf_probabilities
+)
 
 
 print(
