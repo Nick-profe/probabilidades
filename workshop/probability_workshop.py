@@ -252,8 +252,7 @@ print(
 
 
 # 2. ¿Qué representa P(compra) dentro del problema?
-# Respuesta: Representa la proporción de clientes del dataset de la población observada
-#  que realizaron una compra
+# Respuesta:  Representa la proporción de clientes del dataset que realizaron una compra
 
 
 # 3. ¿Por qué las probabilidades de la PMF
