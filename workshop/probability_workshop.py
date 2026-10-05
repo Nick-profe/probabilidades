@@ -322,6 +322,13 @@ Si p estuviera cerca de 0 o de 1, la varianza sería pequeña y el resultado ser
 #    observada en toda la población?
 # Respuesta:
 
+"""
+La probabilidad de la muestra puede ser distinta a la de la población porque la muestra es solo un subconjunto pequeño y aleatorio
+de los datos, y por azar puede contener más o menos compradores de los que le corresponderían. 
+En este caso, la población tiene 0.575 de probabilidad de compra, pero la muestra de 10 clientes dio 0.4 (4 compras).
+Esta diferencia se llama error de muestreo. Mientras más grande sea la muestra, más se acerca su probabilidad a la de la población.
+
+"""
 
 # 7. ¿Cuál es la diferencia entre
 #    P(compra) y P(compra | email)?
