@@ -299,7 +299,7 @@ Dentro del problema nos dice qué tan efectiva fue la campaña en general, sin d
 # Respuesta:
 
 """
-Respuesta: E[X] es el valor esperado, es decir, el promedio que se obtendría de X si se repitiera el experimento muchas veces. 
+E[X] es el valor esperado, es decir, el promedio que se obtendría de X si se repitiera el experimento muchas veces. 
 Se calcula como la suma de cada valor por su probabilidad: 0(0.425) + 1(0.575) = 0.575.
 Cuando X es purchased, que solo vale 0 o 1, el valor esperado coincide con la probabilidad de compra p. 
 Por eso E[X] = 0.575 se interpreta comoque, en promedio, 57.5% de los clientes contactados compra.
@@ -347,4 +347,12 @@ que el email tuvo mejor desempeño que el canal social en esta campaña.
 # 8. ¿Cómo se relaciona P(Y = 1 | X)
 #    con un problema de clasificación
 #    en Machine Learning?
-# Respuesta:python workshop/probability_workshop.py
+# Respuesta:
+
+"""
+En un problema de clasificación binaria, la variable que se quiere predecir es Y (aquí, purchased), y un modelo estima P(Y = 1 | X),
+la probabilidad de que el cliente compre dadas sus características X (por ejemplo, el canal por el que fue contactado). 
+Lo que se calculó con P(compra | email) y P(compra | social) es una versión simple de esto: la probabilidad de compra depende de una característica del cliente. 
+Un clasificador usa esa probabilidad para decidir a qué clase asignar al cliente, por ejemplo, predecir "compra" si P(Y = 1 | X) supera 0.5.
+
+"""
