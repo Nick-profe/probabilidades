@@ -293,39 +293,46 @@ print(
 
 # 1. ¿Por qué purchased puede considerarse
 #    una variable aleatoria Bernoulli?
-# Respuesta:
+# Respuesta: Porque solo tiene dos resultados posibles: 1 (el cliente compra) y
+# 0 (no compra).
 
 
 # 2. ¿Qué representa P(compra) dentro del problema?
-# Respuesta:
+# Respuesta:la probabilidad de que un cliente seleccionado al azar realice una compra.
 
 
 # 3. ¿Por qué las probabilidades de la PMF
 #    deben sumar 1?
-# Respuesta:
+# Respuesta: Porque la suma de las probabilidades de todos los posibles resultados debe ser 1.
 
 
 # 4. ¿Qué representa E[X] cuando X es
 #    la variable purchased?
-# Respuesta:
+# Respuesta: E[X] representa la probablidad esperada de que un cliente realice una compra, es decir, la proporción promedio de clientes que compran.
 
 
 # 5. ¿Qué representa la varianza de X?
-# Respuesta:
+# Respuesta: la varianza de X representa la dispersión de los resultados de la variable aleatoria purchased, indicando 
+# qué tan lejos están los valores de compra de su valor esperado.
 
 
 # 6. ¿Por qué la probabilidad observada en una
 #    muestra puede ser diferente de la probabilidad
 #    observada en toda la población?
-# Respuesta:
+# Respuesta: Porque la muestra es solo un subconjunto de la población, por lo que puede tener una distribución diferente.
 
 
 # 7. ¿Cuál es la diferencia entre
 #    P(compra) y P(compra | email)?
-# Respuesta:
+# Respuesta:  P(compra) es la probabilidad de compra en todos los clientes.
+# P(compra | email) es la probabilidad de compra solo entre los clientes que cumplen 
+# la condición "email" (por ejemplo, los que recibieron el correo). El espacio muestral se reduce a ese subgrupo.
 
 
 # 8. ¿Cómo se relaciona P(Y = 1 | X)
 #    con un problema de clasificación
 #    en Machine Learning?
-# Respuesta:
+# Respuesta: P(Y = 1 | X) representa la probabilidad de que un cliente realice una compra dado un conjunto de características X. 
+# En un problema de clasificación en Machine Learning, el objetivo es construir un modelo que pueda predecir esta probabilidad 
+# para nuevos clientes basándose en sus características, permitiendo así tomar decisiones sobre estrategias de marketing y 
+# segmentación de clientes.
