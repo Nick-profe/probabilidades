@@ -52,20 +52,15 @@ def empirical_probability(event):
     para las cuales un evento es verdadero.
     """
 
-    # TODO: completar
-    return None
+    event = np.asarray(event, dtype=bool)
+    return np.mean(event)
 
 
-# TODO:
 # calcular P(compra)
+p_purchase = empirical_probability(X == 1)
 
-p_purchase = None
-
-
-# TODO:
 # calcular P(no compra)
-
-p_no_purchase = None
+p_no_purchase = empirical_probability(X == 0)
 
 
 print(
@@ -90,20 +85,17 @@ def empirical_pmf(values):
     discreta y sus probabilidades empíricas.
     """
 
-    # TODO: completar
-
-    unique_values = None
-    probabilities = None
-
+    values = np.asarray(values)
+    unique_values, counts = np.unique(values, return_counts=True)
+    probabilities = counts / len(values)
     return unique_values, probabilities
 
 
-pmf_values = None
-pmf_probabilities = None
-
-
-# TODO:
 # utilizar empirical_pmf(X)
+pmf_values, pmf_probabilities = empirical_pmf(X)
+
+
+
 
 
 print(
@@ -123,7 +115,7 @@ print(
 # La suma de todas las probabilidades
 # de una PMF debe ser igual a 1.
 
-pmf_sum = None
+pmf_sum = np.sum(pmf_probabilities)
 
 print(
     "Suma de probabilidades:",
@@ -141,12 +133,10 @@ def expected_value(
     """
     Calcula E[X].
     """
-
-    # TODO: completar
-    return None
+    return np.sum(values * probabilities)
 
 
-expected_purchase = None
+expected_purchase = expected_value(pmf_values, pmf_probabilities)
 
 
 print(
@@ -166,12 +156,11 @@ def variance(
     Calcula Var(X).
     """
 
-    # TODO: completar
+    mu = expected_value(values, probabilities)
+    return np.sum(((values - mu) ** 2) * probabilities)
 
-    return None
 
-
-purchase_variance = None
+purchase_variance = variance(pmf_values, pmf_probabilities)
 
 
 print(
@@ -187,19 +176,11 @@ print(
 np.random.seed(42)
 
 
-# TODO:
-# seleccionar una muestra aleatoria
-# de 10 observaciones de X
-# sin reemplazo.
+# muestra aleatoria de 10 observaciones de X sin reemplazo
+sample = np.random.choice(X, size=10, replace=False)
 
-sample = None
-
-
-# TODO:
-# calcular la probabilidad de compra
-# dentro de la muestra.
-
-sample_probability = None
+# probabilidad de compra dentro de la muestra
+sample_probability = empirical_probability(sample == 1)
 
 
 print(
@@ -224,8 +205,9 @@ def conditional_probability(
     Calcula P(evento | condición).
     """
 
-    # TODO: completar
-    return None
+    event = np.asarray(event, dtype=bool)
+    condition = np.asarray(condition, dtype=bool)
+    return np.mean(event[condition])
 
 
 # channel == 0 representa email
@@ -235,16 +217,11 @@ email_condition = channel == 0
 social_condition = channel == 1
 
 
-# TODO:
 # calcular P(compra | email)
+p_purchase_email = conditional_probability(X == 1, email_condition)
 
-p_purchase_email = None
-
-
-# TODO:
 # calcular P(compra | social)
-
-p_purchase_social = None
+p_purchase_social = conditional_probability(X == 1, social_condition)
 
 
 print(
