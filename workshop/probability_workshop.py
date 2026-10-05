@@ -216,7 +216,6 @@ print(
 )
 
 
-
 # 10. CONEXIÓN CON MACHINE LEARNING
 # ------------------------------------------------------------
 
@@ -237,39 +236,49 @@ print(
 
 # 1. ¿Por qué purchased puede considerarse
 #    una variable aleatoria Bernoulli?
-# Respuesta:
-
+# Respuesta: Porque solo puede tomar dos valores posibles,
+# 0 (no compró) o 1 (compró), al igual que un ensayo Bernoulli,
+# donde se modela el éxito o fracaso de un evento.
 
 # 2. ¿Qué representa P(compra) dentro del problema?
-# Respuesta:
-
+# Respuesta: Representa la proporción de clientes, dentro de
+# todos los contactados, que efectivamente realizaron una compra.
 
 # 3. ¿Por qué las probabilidades de la PMF
 #    deben sumar 1?
-# Respuesta:
-
+# Respuesta: Porque la PMF cubre todos los valores posibles que
+# puede tomar la variable, y la probabilidad total de que ocurra
+# alguno de esos valores debe ser igual a la certeza completa (1).
 
 # 4. ¿Qué representa E[X] cuando X es
 #    la variable purchased?
-# Respuesta:
-
+# Respuesta: Representa el valor promedio esperado de la variable,
+# que en este caso coincide con la proporción de clientes que
+# compran, es decir, es equivalente a P(compra).
 
 # 5. ¿Qué representa la varianza de X?
-# Respuesta:
-
+# Respuesta: Mide qué tan dispersos están los valores de X
+# respecto a su valor esperado, es decir, qué tan variable o
+# impredecible es el comportamiento de compra de los clientes.
 
 # 6. ¿Por qué la probabilidad observada en una
 #    muestra puede ser diferente de la probabilidad
 #    observada en toda la población?
-# Respuesta:
-
+# Respuesta: Porque una muestra es solo un subconjunto de datos
+# tomado al azar, y por efecto de la variabilidad del muestreo
+# puede no reflejar exactamente la proporción real de la población.
 
 # 7. ¿Cuál es la diferencia entre
 #    P(compra) y P(compra | email)?
-# Respuesta:
-
+# Respuesta: P(compra) es la probabilidad de compra considerando
+# a todos los clientes sin distinción, mientras que P(compra | email)
+# es la probabilidad de compra únicamente entre los clientes que
+# fueron contactados por el canal email.
 
 # 8. ¿Cómo se relaciona P(Y = 1 | X)
 #    con un problema de clasificación
 #    en Machine Learning?
-# Respuesta:
+# Respuesta: En clasificación binaria, el modelo busca estimar
+# la probabilidad de que ocurra la clase positiva (Y=1) dadas
+# ciertas características de entrada X, lo cual es exactamente
+# el concepto de probabilidad condicional aplicado a predicción.
