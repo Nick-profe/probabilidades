@@ -51,21 +51,11 @@ def empirical_probability(event):
     Calcula la proporción de observaciones
     para las cuales un evento es verdadero.
     """
-
-    # TODO: completar
-    return None
+    return np.mean(event)
 
 
-# TODO:
-# calcular P(compra)
-
-p_purchase = None
-
-
-# TODO:
-# calcular P(no compra)
-
-p_no_purchase = None
+p_purchase = empirical_probability(X == 1)
+p_no_purchase = empirical_probability(X == 0)
 
 
 print(
@@ -89,21 +79,13 @@ def empirical_pmf(values):
     Calcula los valores posibles de una variable
     discreta y sus probabilidades empíricas.
     """
-
-    # TODO: completar
-
-    unique_values = None
-    probabilities = None
+    unique_values, counts = np.unique(values, return_counts=True)
+    probabilities = counts / len(values)
 
     return unique_values, probabilities
 
 
-pmf_values = None
-pmf_probabilities = None
-
-
-# TODO:
-# utilizar empirical_pmf(X)
+pmf_values, pmf_probabilities = empirical_pmf(X)
 
 
 print(
