@@ -272,10 +272,15 @@ y cada cliente es un ensayo con una probabilidad de éxito p.
 
 """
 
-
-
 # 2. ¿Qué representa P(compra) dentro del problema?
 # Respuesta:
+"""
+P(compra) representa la probabilidad de que un cliente de la campaña realice una compra. 
+Se calcula como la proporción de clientes que compraron sobre el total de clientes: 23 compraron de 40, es decir 0.575 (57.5%). 
+En términos de la variable aleatoria Bernoulli, es la probabilidad# de éxito p, o sea P(X = 1).
+Dentro del problema nos dice qué tan efectiva fue la campaña en general, sin distinguir el canal por el que se contactó a cada cliente.
+
+"""
 
 
 # 3. ¿Por qué las probabilidades de la PMF
