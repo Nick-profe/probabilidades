@@ -263,38 +263,46 @@ print(
 # 1. ¿Por qué purchased puede considerarse
 #    una variable aleatoria Bernoulli?
 # Respuesta:
+# Porque solo asume dos resultados posibles y mutuamente excluyentes: 1 si el cliente compra (éxito) y 0 si no compra (fracaso).
 
 
 # 2. ¿Qué representa P(compra) dentro del problema?
 # Respuesta:
+# Es la probabilidad a priori de que un cliente elegido al azar realice una compra dentro de toda la población estudiada.
 
 
 # 3. ¿Por qué las probabilidades de la PMF
 #    deben sumar 1?
 # Respuesta:
+# Porque la PMF abarca la totalidad del espacio muestral, asegurando que la suma de todos los eventos mutuamente excluyentes sea el 100% de la probabilidad.
 
 
 # 4. ¿Qué representa E[X] cuando X es
 #    la variable purchased?
 # Respuesta:
+# Representa el promedio esperado de compras por cliente, el cual en una variable Bernoulli equivale numéricamente a la tasa o probabilidad de compra P(X = 1).
 
 
 # 5. ¿Qué representa la varianza de X?
 # Respuesta:
+# Mide el grado de incertidumbre o dispersión de la variable. Indica qué tan dividida está la población entre compradores y no compradores alrededor de la media.
 
 
 # 6. ¿Por qué la probabilidad observada en una
 #    muestra puede ser diferente de la probabilidad
 #    observada en toda la población?
 # Respuesta:
+# Debido al error de muestreo y la variabilidad aleatoria intrínseca al seleccionar un subconjunto reducido de datos en lugar de evaluar la población completa.
 
 
 # 7. ¿Cuál es la diferencia entre
 #    P(compra) y P(compra | email)?
 # Respuesta:
+# P(compra) mide la disposición general de compra en toda la base de datos, mientras que P(compra | email) restringe la medición exclusivamente al segmento de clientes contactados vía correo electrónico.
 
 
 # 8. ¿Cómo se relaciona P(Y = 1 | X)
 #    con un problema de clasificación
 #    en Machine Learning?
 # Respuesta:
+# Corresponde a la probabilidad condicional que intenta estimar un modelo de clasificación binaria (como la regresión logística) para predecir si una instancia pertenece a la clase positiva dado su vector de características X.
